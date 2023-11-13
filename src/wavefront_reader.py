@@ -1,6 +1,6 @@
 #
 from __future__ import annotations
-from polyhedron import Polyhedron
+from src.polyhedron import Polyhedron
 import numpy as np
 import os
 

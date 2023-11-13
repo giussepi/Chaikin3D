@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
+
 import sys
 
-sys.path.insert(0, "src/")
-from polyhedron import Polyhedron
-from wavefront_reader import WaveFrontReader
-from arg_utils import gen_arg_parser, read_args
-import plotting
+from src import plotting
+from src.arg_utils import gen_arg_parser, read_args
+from src.wavefront_reader import WaveFrontReader
+from src.polyhedron import Polyhedron
 
 
 def save_poly(poly, figure, output):

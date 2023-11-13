@@ -1,10 +1,11 @@
 # Chaikin3D - Groups module
 from __future__ import annotations
 from collections.abc import Iterable
-import edge as E
-import node as N
-from dataholders import VirtualSet
-import numpy, matrix
+
+import src.edge as E
+import src.node as N
+from src import matrix
+from src.dataholders import VirtualSet
 
 
 class Group:

@@ -1,9 +1,11 @@
 #
 from __future__ import annotations
 from collections.abc import Iterable
-import edge as E
-from dataholders import VirtualSet
+
 import numpy as np
+
+import src.edge as E
+from src.dataholders import VirtualSet
 
 
 class Node:

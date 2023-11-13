@@ -1,6 +1,7 @@
 #
 from __future__ import annotations
-import node as N
+
+import src.node as N
 
 
 class Edge:

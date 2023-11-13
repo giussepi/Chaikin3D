@@ -1,11 +1,13 @@
 # Polyhedron rendering
 from __future__ import annotations
+import time
 
+import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from polyhedron import Polyhedron
-import numpy as np
-import time
+
+from src.polyhedron import Polyhedron
+
 
 DO_CHAIKIN = True
 
@@ -220,7 +222,7 @@ class Renderer:
         width: int = 2,
     ) -> list[go.Scatter3d]:
         # flatten a list of lists into a list
-        flatten = lambda l: list(y for x in l for y in x)
+        def flatten(l): return list(y for x in l for y in x)
         # iterative code below
         xs, ys, zs = map(
             flatten,

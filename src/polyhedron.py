@@ -1,13 +1,16 @@
 # Chaikin3D - Polyhedron module
 from __future__ import annotations
-import node as N
-import edge as E
-import matrix
+import sys
+import time
+
 import numpy as np
-import sys, time
-from chaikin_groups import Group
-from dataholders import VirtualDict, VirtualSet
-from copy import deepcopy
+
+import src.node as N
+import src.edge as E
+from src import matrix
+from src.chaikin_groups import Group
+from src.dataholders import VirtualDict, VirtualSet
+
 
 matrix.EPSILON = 10e-6
 VERBOSE_STEP = 100
