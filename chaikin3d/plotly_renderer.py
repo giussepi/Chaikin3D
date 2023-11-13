@@ -6,7 +6,7 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-from src.polyhedron import Polyhedron
+from chaikin3d.polyhedron import Polyhedron
 
 
 DO_CHAIKIN = True

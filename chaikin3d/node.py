@@ -4,8 +4,8 @@ from collections.abc import Iterable
 
 import numpy as np
 
-import src.edge as E
-from src.dataholders import VirtualSet
+import chaikin3d.edge as E
+from chaikin3d.dataholders import VirtualSet
 
 
 class Node:

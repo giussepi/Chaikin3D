@@ -181,9 +181,9 @@ def read_args(arg_parser: ArgumentParser) -> dict[str, str | bool]:
 
     # renderer
     if args["renderer"] == "plotly":
-        from src.plotly_renderer import Renderer
+        from chaikin3d.plotly_renderer import Renderer
     elif args["renderer"] == "mpl":
-        from src.mpl_renderer import Renderer
+        from chaikin3d.mpl_renderer import Renderer
     else:
         raise ArgumentError(f'Unkown renderer: {args["renderer"]}')
     args["renderer class"] = Renderer

@@ -1,7 +1,7 @@
 #
 from __future__ import annotations
 
-import src.node as N
+import chaikin3d.node as N
 
 
 class Edge:

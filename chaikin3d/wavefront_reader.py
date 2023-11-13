@@ -1,6 +1,6 @@
 #
 from __future__ import annotations
-from src.polyhedron import Polyhedron
+from chaikin3d.polyhedron import Polyhedron
 import numpy as np
 import os
 

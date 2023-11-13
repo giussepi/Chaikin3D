@@ -2,10 +2,10 @@
 from __future__ import annotations
 from collections.abc import Iterable
 
-import src.edge as E
-import src.node as N
-from src import matrix
-from src.dataholders import VirtualSet
+import chaikin3d.edge as E
+import chaikin3d.node as N
+from chaikin3d import matrix
+from chaikin3d.dataholders import VirtualSet
 
 
 class Group:

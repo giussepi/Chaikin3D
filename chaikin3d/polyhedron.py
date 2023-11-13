@@ -5,11 +5,11 @@ import time
 
 import numpy as np
 
-import src.node as N
-import src.edge as E
-from src import matrix
-from src.chaikin_groups import Group
-from src.dataholders import VirtualDict, VirtualSet
+import chaikin3d.node as N
+import chaikin3d.edge as E
+from chaikin3d import matrix
+from chaikin3d.chaikin_groups import Group
+from chaikin3d.dataholders import VirtualDict, VirtualSet
 
 
 matrix.EPSILON = 10e-6

@@ -2,10 +2,10 @@
 
 import sys
 
-from src import plotting
-from src.arg_utils import gen_arg_parser, read_args
-from src.wavefront_reader import WaveFrontReader
-from src.polyhedron import Polyhedron
+from chaikin3d import plotting
+from chaikin3d.arg_utils import gen_arg_parser, read_args
+from chaikin3d.wavefront_reader import WaveFrontReader
+from chaikin3d.polyhedron import Polyhedron
 
 
 def save_poly(poly, figure, output):
