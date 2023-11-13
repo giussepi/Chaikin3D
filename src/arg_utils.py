@@ -1,6 +1,8 @@
 from __future__ import annotations
-from argparse import ArgumentParser
 import os
+
+from argparse import ArgumentParser
+
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_ARGS_JSON_FILE_PATH = "default-args.json"
@@ -179,9 +181,9 @@ def read_args(arg_parser: ArgumentParser) -> dict[str, str | bool]:
 
     # renderer
     if args["renderer"] == "plotly":
-        from plotly_renderer import Renderer
+        from src.plotly_renderer import Renderer
     elif args["renderer"] == "mpl":
-        from mpl_renderer import Renderer
+        from src.mpl_renderer import Renderer
     else:
         raise ArgumentError(f'Unkown renderer: {args["renderer"]}')
     args["renderer class"] = Renderer
@@ -189,7 +191,6 @@ def read_args(arg_parser: ArgumentParser) -> dict[str, str | bool]:
     A = type(
         "A",
         (),
-        dict((k.replace(" ", "_"), v) for k, v in args.items())
-        | {"__getitem__": lambda self, value: args[value]},
+        {**{"__getitem__": lambda self, value: args[value]}, **dict((k.replace(" ", "_"), v) for k, v in args.items())}
     )
     return A()
