@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+""" chaikin3d/arg_utils.py """
+
 from __future__ import annotations
 import os
-
 from argparse import ArgumentParser
 
 
@@ -14,8 +16,6 @@ class ArgumentError(Exception):
 
     """
 
-    pass
-
 
 def gen_arg_parser() -> ArgumentParser:
     """
@@ -28,7 +28,6 @@ def gen_arg_parser() -> ArgumentParser:
         ArgumentParser instance
 
     """
-
     parser = ArgumentParser(
         description="Apply the Chaikin algorithm, expanded to the 3D space"
     )
@@ -128,12 +127,15 @@ def gen_arg_parser() -> ArgumentParser:
     return parser
 
 
-def read_args(arg_parser: ArgumentParser) -> dict[str, str | bool]:
+def read_args(arg_parser: ArgumentParser, /, *,  cmd_args: str = '') -> dict[str, str | bool]:
     """
-    Read and parse the command-line arguments.
+    Read and parse command-line arguments or from a list if provided.
 
     Args:
         arg_parser (ArgumentParser): Argument parser.
+        cmd_args              (str): Optional string with options.
+                                     E.g. '-i my_obj.obj -cg 4 -cc 4 -p evolution -oe first'
+                                     Default: None
 
     Returns:
         A:
@@ -144,11 +146,16 @@ def read_args(arg_parser: ArgumentParser) -> dict[str, str | bool]:
 
     Raises:
         ArgumentError: The specified renderer is not known
-
     """
+    assert isinstance(arg_parser, ArgumentParser), type(arg_parser)
+    assert isinstance(cmd_args, str), type(cmd_args)
 
-    # parse the command line arguments
-    args = vars(arg_parser.parse_args())
+    if cmd_args:
+        # parse provided arguments list
+        args = vars(arg_parser.parse_args(cmd_args.split()))
+    else:
+        # parse the command line arguments
+        args = vars(arg_parser.parse_args())
     args = dict(
         map(
             lambda kvpair: (kvpair[0].replace("_", " ").replace("-", " "), kvpair[1]),

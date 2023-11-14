@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+""" chaikin3d.py """
 
 from chaikin3d import plotting
 from chaikin3d.arg_utils import gen_arg_parser, read_args
@@ -26,6 +27,7 @@ def main():
 
     arg_parser = gen_arg_parser()
     # a : command-line arguments
+    # a = read_args(arg_parser, commands='-i my_obj.obj -cg 4 -cc 4 -p evolution -oe first')
     a = read_args(arg_parser)
 
     vprint = print if a.verbose else lambda *args, **kwargs: None
