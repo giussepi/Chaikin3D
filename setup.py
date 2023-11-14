@@ -18,7 +18,7 @@ def _parse_requirements(filename: str) -> List[str]:
 
 setuptools.setup(
     name="chaikin3d",
-    version="0.0.1",
+    version="0.1.0",
     author="Giussepi Lopez",
     author_email="giussepexy@gmail.com",
     description="Expansion of the Chaikin Algorithm to 3D space (polyhedra)",
