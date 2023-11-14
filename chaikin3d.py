@@ -27,7 +27,7 @@ def main():
 
     arg_parser = gen_arg_parser()
     # a : command-line arguments
-    # a = read_args(arg_parser, commands='-i my_obj.obj -cg 4 -cc 4 -p evolution -oe first')
+    # a = read_args(arg_parser, cmd_args='-i my_obj.obj -cg 4 -cc 4 -p evolution -oe first')
     a = read_args(arg_parser)
 
     vprint = print if a.verbose else lambda *args, **kwargs: None
