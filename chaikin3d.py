@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 
-import sys
-
 from chaikin3d import plotting
 from chaikin3d.arg_utils import gen_arg_parser, read_args
 from chaikin3d.wavefront_reader import WaveFrontReader
-from chaikin3d.polyhedron import Polyhedron
 
 
 def save_poly(poly, figure, output):
